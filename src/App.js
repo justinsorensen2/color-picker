@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Display from './components/Display'
 import Sliders from './components/Sliders'
 import Header from './components/Header'
-import Checker from './images/7.jpg'
 
 class App extends React.Component {
   state = {
@@ -40,23 +39,27 @@ class App extends React.Component {
     console.log(e.target.value)
   }
 
+  randomize = () => {
+    this.setState({
+      hue: Math.round(Math.random() * 360),
+      saturation: Math.round(Math.random() * 100),
+      lightness: Math.round(Math.random() * 100),
+      alpha: Math.round(Math.random() * 100),
+    })
+  }
+
   render() {
-    const newBackgroundColor = `hsla(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%, ${this.state.alpha})`
-    console.log(newBackgroundColor)
+    const textBackgroundColor = `hsla(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%, ${this.state.alpha})`
     return (
       <>
         <Header></Header>
         <main>
-          <aside className="Display">
-            <article>
-              <sub
-                className="UserSelection"
-                style={{
-                  backgroundColor: newBackgroundColor,
-                }}
-              ></sub>
-            </article>
-          </aside>
+          <Display
+            hue={this.state.hue}
+            saturation={this.state.saturation}
+            lightness={this.state.lightness}
+            alpha={this.state.alpha}
+          />
           <ul className="Sliders">
             <li className="Slider">
               <h3>H</h3>
@@ -106,9 +109,14 @@ class App extends React.Component {
                 max="100%"
               ></input>
             </li>
+            <li className="Randomize">
+              <button onClick={this.randomize}>Randomize</button>
+            </li>
           </ul>
         </main>
-        <footer></footer>
+        <footer>
+          <h3>{textBackgroundColor}</h3>
+        </footer>
       </>
     )
   }
