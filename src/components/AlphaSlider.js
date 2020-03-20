@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 export class AlphaSlider extends Component {
-  initial = {
-    alpha: Math.floor(Math.random),
+  state = {
+    alpha: Math.round(Math.random * 100),
   }
 
   alphaSliderTracker = e => {
@@ -10,8 +10,6 @@ export class AlphaSlider extends Component {
       alpha: e.target.value,
     })
     console.log(e.target.value)
-    const alphaVal = e.target.value
-    return alphaVal
   }
 
   render() {
@@ -23,8 +21,9 @@ export class AlphaSlider extends Component {
           type="range"
           className="Alpha"
           name="alpha"
-          min="0"
-          max="1"
+          value={this.state.alpha}
+          min="0%"
+          max="100%"
         ></input>
       </li>
     )

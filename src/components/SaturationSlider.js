@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 
 export class SaturationSlider extends Component {
-  initial = {
-    saturation: Math.floor(Math.random() * 100),
+  state = {
+    saturation: Math.round(Math.random() * 100),
   }
   saturationSliderTracker = e => {
     this.setState({
       saturation: e.target.value,
     })
     console.log(e.target.value)
-    const saturationVal = e.target.value
-    return saturationVal
   }
 
   render() {
@@ -22,6 +20,7 @@ export class SaturationSlider extends Component {
           type="range"
           className="Saturation"
           name="saturation"
+          value={this.state.saturation}
           min="0%"
           max="100%"
         ></input>

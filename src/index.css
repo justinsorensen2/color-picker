@@ -22,12 +22,15 @@ header {
   color: #090979;
   background-color: #616195;
   height: 6rem;
+  width: 100%;
+  padding-right: 1.9rem;
 }
 
 footer {
   background-color: #616195;
   width: 100%;
   height: 1rem;
+  padding-right: 1.9rem;
 }
 
 h1 {
@@ -75,7 +78,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-top: -.01rem;
+  margin-top: -0.01rem;
 }
 
 li {

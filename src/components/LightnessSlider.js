@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 
 export class LightnessSlider extends Component {
-  initial = {
-    lightness: Math.floor(Math.random() * 100),
+  state = {
+    lightness: Math.round(Math.random() * 100),
   }
   lightnessSliderTracker = e => {
     this.setState({
       lightness: e.target.value,
     })
     console.log(e.target.value)
-    const lightnessVal = e.target.value
-    return lightnessVal
   }
 
   render() {
@@ -22,6 +20,7 @@ export class LightnessSlider extends Component {
           type="range"
           className="Lightness"
           name="lightness"
+          value={this.state.lightness}
           min="0%"
           max="100%"
         ></input>

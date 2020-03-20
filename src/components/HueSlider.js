@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 
 export class HueSlider extends Component {
-  initial = {
-    hue: 60,
+  state = {
+    hue: Math.round(Math.random * 360),
   }
   hueSliderTracker = e => {
     this.setState({
       hue: e.target.value,
     })
     console.log(e.target.value)
-    const hueVal = e.target.value
-    return hueVal
   }
 
   render() {
@@ -22,6 +20,7 @@ export class HueSlider extends Component {
           type="range"
           className="Hue"
           name="hue"
+          value={this.state.hue}
           min="0"
           max="360"
         ></input>
