@@ -9,9 +9,6 @@ export class HueSlider extends Component {
       hue: e.target.value,
     })
     console.log(e.target.value)
-    this.setState({
-      hue: this.state.hue,
-    })
     const hueVal = e.target.value
     return hueVal
   }

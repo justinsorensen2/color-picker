@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class AlphaSlider extends Component {
   initial = {
-    alpha: 0,
+    alpha: Math.floor(Math.random),
   }
 
   alphaSliderTracker = e => {
@@ -10,9 +10,6 @@ export class AlphaSlider extends Component {
       alpha: e.target.value,
     })
     console.log(e.target.value)
-    this.setState({
-      alpha: this.state.alpha,
-    })
     const alphaVal = e.target.value
     return alphaVal
   }

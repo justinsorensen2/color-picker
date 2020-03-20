@@ -9,9 +9,6 @@ export class LightnessSlider extends Component {
       lightness: e.target.value,
     })
     console.log(e.target.value)
-    this.setState({
-      lightness: this.state.lightness,
-    })
     const lightnessVal = e.target.value
     return lightnessVal
   }

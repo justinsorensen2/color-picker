@@ -9,9 +9,6 @@ export class SaturationSlider extends Component {
       saturation: e.target.value,
     })
     console.log(e.target.value)
-    this.setState({
-      saturation: e.target.saturation,
-    })
     const saturationVal = e.target.value
     return saturationVal
   }
